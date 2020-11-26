@@ -5,7 +5,7 @@ $PBIGroupsFileCSV =  "WorkspaceUsers.csv"
 $PBIGroupsNr = 500
 Connect-PowerBIServiceAccount -Credential $myCred
 
-$ActiveGroupsURLExPersonal = '/admin/groups?$top='+ $PBIGroupsNr + '&' + '$filter=type ne' + " 'PersonalGroup'" + ' and state eq' + " 'Active'" + '&$expand=users'
+$ActiveGroupsURLExPersonal = '/admin/groups?$top=' + $PBIGroupsNr + '&' + '$filter=type ne' + " 'PersonalGroup'" + ' and state eq' + " 'Active'" + '&$expand=users'
 
 Invoke-PowerBIRestMethod -Url $ActiveGroupsURLExPersonal -Method Get | Out-File $PBIGroupsFile
 
